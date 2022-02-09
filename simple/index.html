@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="vendors/aos/css/aos.css">
   <link rel="stylesheet" href="css/style.min.css">
   <link rel="short cut icon" href="images/logotipowebseo.png">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body id="body" data-spy="scroll" data-target=".navbar" data-offset="100">
   <header id="header-section">
@@ -68,7 +69,7 @@
       <section class="features-overview" id="features-section" >
         <div class="content-header">
           <h2>Qué trabajamos</h2>
-          <h6 class="section-subtitle text-muted">Porque entendemos que cada proyecto es unico y único, nuestro enfoque principal está en desarrollar soluciones de calidad basadas tanto en los objetivos de negocio como en las ideas creativas.</h6>
+          <h6 class="section-subtitle text-muted">Porque entendemos que cada proyecto es único, nuestro enfoque principal está en desarrollar soluciones de calidad basadas tanto en los objetivos de negocio como en las ideas creativas.</h6>
         </div>
         <div class="d-md-flex justify-content-between">
           <div class="grid-margin d-flex justify-content-start">
@@ -325,7 +326,10 @@
             <h4 class="pt-1" data-aos="fade-down">Cítanos sin compromiso</h4>
           </div>
           <div data-aos="fade-up">
-            <button class="btn btn-rounded btn-outline-danger"><a href="">Conseguir una cita</a></button>
+            <button class="btn btn-rounded btn-outline-danger"><a 
+            href="https://calendly.com/webseosolutions/30min"
+            target="_blank"
+            rel="noopener">Conseguir una cita</a></button>
           </div>          
         </div>
       </section>
@@ -341,11 +345,11 @@
           <div class="col-12 col-md-6 col-lg-3 grid-margin">
             <h5 class="pb-2">Suscríbete a nuestro boletín de ofertas</h5>
             <p class="text-muted">No te pierdas nuestra newsletter y lo que es peor nuestros descuentos!</p>
-            <form>
-              <input type="text" class="form-control" id="Email" placeholder="Correo electrónico">
+            <form action="" method="POST">
+              <input name="" type="text" class="form-control" id="Email" placeholder="Correo electrónico">
             </form>
             <div class="pt-3">
-              <button class="btn btn-dark">Subscribe</button>
+              <button class="btn btn-dark">Suscríbete</button>
             </div>   
           </div>
           <div class="col-12 col-md-6 col-lg-3 grid-margin">
@@ -361,7 +365,7 @@
               <h5 class="pb-2">Nuestra dirección</h5>
               <p class="text-muted">Sabadell, Barcelona<br></p>
               <div class="d-flex justify-content-center justify-content-md-start">
-                <a href=""><span class="mdi mdi-twitter"></span></a>
+                <a href="https://twitter.com/seosolutionsweb"><span class="mdi mdi-twitter"></span></a>
               </div>
           </div>
         </div>  
@@ -379,7 +383,7 @@
               <h4 class="modal-title" id="exampleModalLabel">Contacta con nosotros</h4>
             </div>
             <div class="modal-body">
-              <form action="https://api.forming.site/f/61feb160ff9a794d2b025fe4" method="POST">
+              <form action="" method="POST">
                 <div class="form-group">
                   <label for="Name">Nombre</label>
                   <input name="Nombre" type="text" class="form-control" id="Name" placeholder="Nombre" required>
@@ -408,5 +412,42 @@
   <script src="vendors/owl-carousel/js/owl.carousel.min.js"></script>
   <script src="vendors/aos/js/aos.js"></script>
   <script src="js/landingpage.js"></script>
+  <div id="div-cookies" style="display: none;">
+    Necesitamos usar cookies para que funcione todo, si permanece aquí acepta su uso, más información en
+    <a hreflang="es" href="/info/aviso-legal">Aviso Legal</a>
+    y la
+    <a hreflang="es" href="/info/politica-de-privacidad">Política de Privacidad</a>.
+    <button type="button" class="btn btn-sm btn-primary" onclick="acceptCookies()">
+        Acepto el uso de cookies
+    </button>
+</div>
+<style>
+#div-cookies {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0px -5px 15px gray;
+    padding: 7px;
+    text-align: center;
+    z-index: 99;
+}
+</style>
+<script>
+function checkAcceptCookies() {
+    if (localStorage.acceptCookies == 'true') {
+    } else {
+        $('#div-cookies').show();
+    }
+}
+function acceptCookies() {
+    localStorage.acceptCookies = 'true';
+    $('#div-cookies').hide();
+}
+$(document).ready(function() {
+    checkAcceptCookies();
+});
+</script>
 </body>
 </html>
